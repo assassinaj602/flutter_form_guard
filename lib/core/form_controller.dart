@@ -5,7 +5,11 @@ import '../models/analytics_report.dart';
 import 'analytics_engine.dart';
 import 'form_storage.dart';
 
+/// Manages the state, validation, and persistence of a form.
+///
+/// Created internally by [SmartFormGuard]. You can access it via [SmartFormGuard.of].
 class FormController extends ChangeNotifier {
+  /// Unique identifier for this form.
   final String formId;
   final FormStorage _storage;
   final AnalyticsEngine _analytics = AnalyticsEngine();
@@ -16,8 +20,13 @@ class FormController extends ChangeNotifier {
   Timer? _autoSaveTimer;
   bool _isLoading = true;
 
+  /// Whether the form is currently restoring data from storage.
   bool get isLoading => _isLoading;
+
+  /// Whether all registered fields are valid.
   bool get isValid => _fields.values.every((f) => f.isValid);
+
+  /// Returns an analytics report for this form session.
   AnalyticsReport get analytics => _analytics.generateReport();
 
   FormController({required this.formId, required FormStorage storage})

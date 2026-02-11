@@ -1,3 +1,8 @@
+/// A robust form management package for Flutter.
+///
+/// Handles validation, auto-saving, and analytics.
+///
+/// See [SmartFormGuard] and [GuardField] for usage.
 library flutter_form_guard;
 
 export 'core/form_controller.dart';

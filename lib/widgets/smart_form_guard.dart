@@ -2,12 +2,25 @@ import 'package:flutter/material.dart';
 import '../core/form_controller.dart';
 import '../core/form_storage.dart';
 
+/// A smart wrapper widget that provides form state management to its descendants.
+///
+/// Wraps your form and provides a [FormController] via [SmartFormGuard.of].
+/// Handles auto-saving, restoration, and analytics.
 class SmartFormGuard extends StatefulWidget {
+  /// Unique identifier for this form. Used as the key for storage persistence.
   final String formId;
+
+  /// The widget below this widget in the tree.
   final Widget child;
+
+  /// Whether to automatically save form state on changes. Defaults to `true`.
   final bool autoSave;
+
+  /// Whether to automatically restore saved state on initialization. Defaults to `true`.
   final bool autoRestore;
-  final FormStorage? storage; // Allow custom storage provider
+
+  /// Optional custom storage provider. Defaults to [SharedPrefsFormStorage].
+  final FormStorage? storage;
 
   const SmartFormGuard({
     Key? key,

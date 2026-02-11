@@ -1,3 +1,6 @@
+/// A collection of reusable validators for form fields.
+///
+/// Use [Validators.compose] to combine multiple validators.
 class Validators {
   static String? Function(dynamic) required({String message = "Required"}) {
     return (value) =>

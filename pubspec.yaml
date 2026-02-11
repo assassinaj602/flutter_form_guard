@@ -1,7 +1,10 @@
+
 name: flutter_form_guard
-description: "A new Flutter package project."
-version: 0.0.1
-homepage:
+description: A robust, "smart" form management package for Flutter that handles validation, auto-saving (draft restoration), and analytics.
+version: 1.2.0
+homepage: https://github.com/yourusername/flutter_form_guard
+repository: https://github.com/yourusername/flutter_form_guard
+issue_tracker: https://github.com/yourusername/flutter_form_guard/issues
 
 environment:
   sdk: ^3.7.2

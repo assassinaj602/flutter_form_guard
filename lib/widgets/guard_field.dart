@@ -4,14 +4,30 @@ import '../models/field_state.dart';
 import '../validators/validators.dart';
 import 'smart_form_guard.dart';
 
+/// A smart form field that automatically registers with [SmartFormGuard].
+///
+/// Use [GuardField.text], [GuardField.email], or [GuardField.password] for common use cases.
 class GuardField extends StatefulWidget {
+  /// Field name. Must be unique within the form.
   final String name;
+
+  /// Label text displayed in the input decoration.
   final String? label;
+
+  /// Hint text displayed in the input decoration.
   final String? hint;
+
+  /// Whether to hide the text (e.g. for passwords).
   final bool obscureText;
+
+  /// Keyboard type for the input.
   final TextInputType? keyboardType;
+
+  /// List of validators to apply.
   final List<String? Function(dynamic)>? validators;
-  final String? Function(dynamic)? validator; // Single custom validator
+
+  /// Single custom validator.
+  final String? Function(dynamic)? validator;
 
   const GuardField({
     Key? key,
