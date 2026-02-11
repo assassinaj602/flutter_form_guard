@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import '../core/form_controller.dart';
-import '../models/field_state.dart';
 import '../validators/validators.dart';
 import 'smart_form_guard.dart';
 
@@ -30,7 +29,7 @@ class GuardField extends StatefulWidget {
   final String? Function(dynamic)? validator;
 
   const GuardField({
-    Key? key,
+    super.key,
     required this.name,
     this.label,
     this.hint,
@@ -38,7 +37,7 @@ class GuardField extends StatefulWidget {
     this.keyboardType,
     this.validators,
     this.validator,
-  }) : super(key: key);
+  });
 
   factory GuardField.text({
     required String name,
@@ -85,7 +84,7 @@ class GuardField extends StatefulWidget {
   }
 
   @override
-  _GuardFieldState createState() => _GuardFieldState();
+  State<GuardField> createState() => _GuardFieldState();
 }
 
 class _GuardFieldState extends State<GuardField> {

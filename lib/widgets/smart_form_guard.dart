@@ -39,7 +39,7 @@ class SmartFormGuard extends StatefulWidget {
   }
 
   @override
-  _SmartFormGuardState createState() => _SmartFormGuardState();
+  State<SmartFormGuard> createState() => _SmartFormGuardState();
 }
 
 class _SmartFormGuardState extends State<SmartFormGuard> {
