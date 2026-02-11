@@ -49,11 +49,12 @@ Designed to be state-management agnostic, `SmartFormGuard` works seamlessly with
 Add the dependency to your `pubspec.yaml`:
 
 ```yaml
+
 dependencies:
   flutter_form_guard:
     git:
-      url: https://github.com/yourusername/flutter_form_guard.git
-      # path: ^1.0.0 (once published on pub.dev)
+      url: https://github.com/assassina602/flutter_form_guard.git
+      # path: ^1.2.0 (once published on pub.dev)
 ```
 
 ## 🛠️ Usage
