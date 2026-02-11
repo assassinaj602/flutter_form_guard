@@ -17,7 +17,8 @@ topics:
   - validation
   - autosave
   - analytics
-  - state_management
+
+  - state-management
 
 dependencies:
   flutter:
