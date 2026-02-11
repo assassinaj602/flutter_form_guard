@@ -10,10 +10,9 @@ class Validators {
   static String? Function(dynamic) email({String message = "Invalid email"}) {
     final emailRegex = RegExp(r'^[^@]+@[^@]+\.[^@]+');
     return (value) {
-      if (value == null || value is! String || value.isEmpty)
-        return null; // Allow empty? Usually email is not required unless combined with required()
-      // But typically email validator implies non-empty check if value is present.
-      // If value is present and not empty, check regex.
+      if (value == null || value is! String || value.isEmpty) {
+        return null;
+      }
       if (!emailRegex.hasMatch(value)) return message;
       return null;
     };
@@ -22,8 +21,10 @@ class Validators {
   static String? Function(dynamic) minLength(int length, {String? message}) {
     return (value) {
       if (value == null || value is! String) return null;
-      if (value.length < length)
+
+      if (value.length < length) {
         return (message ?? "Must be at least $length characters");
+      }
       return null;
     };
   }
@@ -35,8 +36,9 @@ class Validators {
     final hasNumber = RegExp(r'[0-9]');
     // final hasSpecial = RegExp(r'[!@#$%^&*(),.?":{}|<>]'); // basic set
     return (value) {
-      if (value == null || value is! String || value.length < 8)
+      if (value == null || value is! String || value.length < 8) {
         return "Must be at least 8 characters";
+      }
       if (!hasNumber.hasMatch(value)) return "Must contain a number";
       // if (!hasSpecial.hasMatch(value)) return "Must contain a special character";
       return null;
@@ -47,8 +49,9 @@ class Validators {
     String message = "Must be a number",
   }) {
     return (value) {
-      if (value == null || value.toString().isEmpty)
+      if (value == null || value.toString().isEmpty) {
         return null; // Optional unless required
+      }
       if (num.tryParse(value.toString()) == null) return message;
       return null;
     };
@@ -63,8 +66,9 @@ class Validators {
       if (value == null || value.toString().isEmpty) return null;
       if (!phoneRegex.hasMatch(
         value.toString().replaceAll(RegExp(r'[\s\-\(\)]'), ''),
-      ))
+      )) {
         return message;
+      }
       return null;
     };
   }
@@ -86,8 +90,10 @@ class Validators {
       if (value == null || value.toString().isEmpty) return null;
       final n = num.tryParse(value.toString());
       if (n == null) return "Invalid number";
-      if (n < min || n > max)
+
+      if (n < min || n > max) {
         return (message ?? "Must be between $min and $max");
+      }
       return null;
     };
   }

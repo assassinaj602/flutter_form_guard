@@ -7,9 +7,17 @@ homepage: https://github.com/assassina602/flutter_form_guard
 repository: https://github.com/assassina602/flutter_form_guard
 issue_tracker: https://github.com/assassina602/flutter_form_guard/issues
 
+
 environment:
   sdk: ^3.7.2
   flutter: ">=1.17.0"
+
+topics:
+  - forms
+  - validation
+  - autosave
+  - analytics
+  - state_management
 
 dependencies:
   flutter:

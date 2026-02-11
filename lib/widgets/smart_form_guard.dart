@@ -23,13 +23,13 @@ class SmartFormGuard extends StatefulWidget {
   final FormStorage? storage;
 
   const SmartFormGuard({
-    Key? key,
+    super.key,
     required this.formId,
     required this.child,
     this.autoSave = true,
     this.autoRestore = true,
     this.storage,
-  }) : super(key: key);
+  });
 
   static FormController of(BuildContext context) {
     final _Result? result =
@@ -71,11 +71,11 @@ class _SmartFormGuardState extends State<SmartFormGuard> {
   }
 }
 
+// ignore: library_private_types_in_public_api
 class _Result extends InheritedWidget {
   final FormController controller;
 
-  const _Result({Key? key, required this.controller, required Widget child})
-    : super(key: key, child: child);
+  const _Result({required this.controller, required super.child});
 
   @override
   bool updateShouldNotify(_Result oldWidget) =>

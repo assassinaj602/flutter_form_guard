@@ -2,8 +2,9 @@
 ///
 /// Handles validation, auto-saving, and analytics.
 ///
+
 /// See [SmartFormGuard] and [GuardField] for usage.
-library flutter_form_guard;
+library;
 
 export 'core/form_controller.dart';
 export 'core/form_storage.dart';
